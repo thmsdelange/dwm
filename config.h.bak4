@@ -79,12 +79,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 /* custom commands */
-static const char *slockcmd[] = { "slock", NULL };
 static const char *upvol[]      = { "/home/thomas/scripts/volume-control", "up",      NULL };
 static const char *downvol[]    = { "/home/thomas/scripts/volume-control", "down",      NULL };
 static const char *mutevol[]    = { "/home/thomas/scripts/volume-control", "mute",      NULL };
-static const char *brightnessup[] = { "brightnessctl", "set", "10%+", NULL };
-static const char *brightnessdown[]   = { "brightnessctl", "set", "10%-", NULL };
 static const char *prtscrcmd[] = { "flameshot", "gui", NULL};
 static const char *prtscrscrcmd[] = { "flameshot", "screen", NULL};
 
@@ -129,12 +126,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|Mod1Mask, 		XK_l, 	   spawn, 	   {.v = slockcmd } },
 	{ 0,                       	XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       	XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       	XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ 0, 				XF86XK_MonBrightnessDown, spawn, {.v = brightnessdown } },
-	{ 0, 				XF86XK_MonBrightnessUp,   spawn, {.v = brightnessup } },
 	{ 0,			        XK_Print,  spawn,	   {.v = prtscrcmd } },
 	{ MODKEY|ShiftMask,	        XK_Print,  spawn,	   {.v = prtscrscrcmd } },
 };
